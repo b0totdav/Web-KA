@@ -1,5 +1,7 @@
 # Web-KA
 
+https://github.com/KAnti-VP/fpt
+
 Classromra való beadás:
 Web:
   flex-f1: <---- Ennek a linkjét rakd be
