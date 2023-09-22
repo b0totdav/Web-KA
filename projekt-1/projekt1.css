@@ -1,5 +1,8 @@
 .hetkoznap{
     display: flex;
+    flex-direction: row;
+}
+.hetkoznap>div>div{
     flex-direction: column;
 }
 .hetvege{
