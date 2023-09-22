@@ -1,0 +1,25 @@
+.hetkoznap{
+    display: flex;
+    flex-direction: column;
+}
+.hetvege{
+    display: flex;
+    flex-direction: row;
+}
+.starwars{
+    background-color: cyan;
+    font:black;
+}
+.iskola{
+    background-color: crimson;
+    font:black;
+}
+header{
+    background-color: dimgray;
+    font:black;
+}
+body{
+    background-image: url("../kepek/trueno.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
