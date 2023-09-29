@@ -1,9 +1,23 @@
-let Eclipse=document.getElementById(lightAndDark)
+let eclipse=document.getElementById("lightAndDark");
 
-Eclipse.onclick()
-{
-    if(Eclipse.=="Sötét mód"){
-        Eclipse.innerText="Világos mód";
-        //document.getElementsByTagName("body").style.background-image=url('../kepek/2.png');
+function valtas(){
+
+   
+    if(eclipse.innerText=="Sötét mód"){
+        eclipse.innerText="Világos mód";
+        let body=document.getElementsByTagName("body");
+        body[0].style.backgroundImage = "url('../kepek/2.png')";
+        let f1=document.getElementsByClassName("f1")
+        for (let i = 0; i < f1.length; i++) {
+            f1[i].style.backgroundColor = "darkred";
+          }
+    }else{
+        eclipse.innerText="Sötét mód";
+        let body=document.getElementsByTagName("body");
+        body[0].style.backgroundImage = "url('../kepek/trueno.jpg')";
+        let f1=document.getElementsByClassName("f1")
+        for (let i = 0; i < f1.length; i++) {
+            f1[i].style.backgroundColor = "crimson";
+          }
     }
 }
