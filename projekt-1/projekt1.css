@@ -1,6 +1,7 @@
 .hetkoznap{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 .hetkoznap>div>div{
     flex-direction: column;
@@ -8,21 +9,40 @@
 .hetvege{
     display: flex;
     flex-direction: row;
+    justify-content: space-between
 }
 .starwars{
     background-color: cyan;
     font:black;
 }
-.iskola{
+.duolingo{
+    background-color: yellowgreen;
+}
+.overwatch{
+    background-color: greenyellow;
+}
+.f1{
     background-color: crimson;
     font:black;
 }
-header{
-    background-color: dimgray;
+header, div{
+    border: 1px solid;
+    border-collapse: collapse;
+    background-color: rgba(105, 105, 105, 0.8);
     font:black;
+}
+header{
+    font-weight: bolder;
 }
 body{
     background-image: url("../kepek/trueno.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    font-size: larger;
+}
+#lightAndDark{
+    display: flex;
+    justify-content: flex-end;
+    margin-left:95%;
+    margin-bottom: 10%;
 }
