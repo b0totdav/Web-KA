@@ -25,3 +25,12 @@ function Hozzaad()
     let bev=document.getElementById("bevitel").value;
     tomb.push(bev);
 }
+function Hossz()
+{
+    e.innerHTML="A tömb "+tomb.length+" elemet tartalmaz";
+}
+function Kivetel()
+{
+    let kiv=document.getElementById("kivetel").value;
+    tomb.splice(kiv,1)
+}
