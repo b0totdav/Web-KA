@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Elso()">Első elem</button>
+    <button onclick="Masodik()">Második elem</button>
+    <button onclick="Harmadik()">Harmadik elem</button>
+    <div id="kiiras"></div>
+</body>
+<script>
+    let e=document.getElementById("kiiras");
+    let tomb=[1,2,3,4,5];
+    function Elso()
+    {
+        e.innerHTML=tomb[0];
+    }
+    function Masodik()
+    {
+        e.innerHTML=tomb[1];  
+    }
+    function Harmadik()
+    {
+        e.innerHTML=tomb[2];  
+    }
+</script>
+</html>
