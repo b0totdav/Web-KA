@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object 4</title>
+    <style>
+        #kiiras{
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 75%;
+        }
+        .card{
+            width: 30%;
+            background-color: cyan;
+            color: black;
+            border-radius: 15px;
+            margin-top: 15px;
+            text-indent: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="kiiras"></div>
+    <script>
+        let heroes = [
+        {firstName: "Ahsoka", lastName: "Tano", job: "padawan"},
+        {firstName: "Boba", lastName: "Fett", job: "fejvadász"},
+        {firstName: "Han", lastName: "Solo", job: "csempész"},
+        {firstName: "Leia", lastName: "Organa", job: "szenátor"},
+        {firstName: "Rex", lastName: "CT-7567", job: "klón katona"},
+        {firstName: "Din", lastName: "Djarin", job: "fejvadász"},
+        {firstName: "Sabine", lastName: "Wren", job: "Lázadás tábornoka"},
+        {firstName: "Boss", lastName: "CC-1138", job: "klón kommandós"},
+        {firstName: "Bo", lastName: "Katan", job: "Mandalór királynője"} ]
+        window.onload=function Rajzolas(){   
+            let tempLit;
+            let ki="<table>";
+            for(let i=0; i<heroes.length ;i++){
+                tempLit=`
+                <tr class="card">
+                    <td>Név: ${heroes[i].firstName} ${heroes[i].lastName}</td>
+                    <td>Munka: ${heroes[i].job}</td>
+                </tr>
+                `
+                ki+=tempLit;
+            }
+            ki+="</table>"
+            document.getElementById("kiiras").innerHTML=ki;
+        }
+
+    </script>
+</body>
+</html>
