@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Object 3</title>
 </head>
 <body>
-    <div id="ki">
-
-    </div>
+    <div id="kiiratas"></div>
+    <script>
+        let fizetes = {
+        Anna : 2100,
+        Cecil : 1890,
+        Emil : 2050,
+        Gerald : 2920
+        }
+        let osszeg=fizetes.Anna+fizetes.Cecil+fizetes.Emil+fizetes.Gerald;
+        console.log(osszeg);
+        document.getElementById("kiiratas").innerHTML+="Anna: "+fizetes.Anna+"Ft<br>Cecil: "+fizetes.Cecil+"Ft<br>Emil: "+fizetes.Emil+"Ft<br>Gerald: "+fizetes.Gerald+" Ft<br>";
+        document.getElementById("kiiratas").innerHTML+="Összesen: "+osszeg+" Ft";
+    </script>
 </body>
-<script src="object3.js"></script>
 </html>
