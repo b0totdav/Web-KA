@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Event példád</title>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    margin: 5px;
+    padding: 5px 10px;
+    font-size: 8px;
+    cursor: pointer;
+} </style>
+</head>
+
+<body>
+    <label for="szoveg">Szeretne jó programozó lenni? </label>
+    <input type="text" id="szoveg">
+<button class="btn">Küldés</button>
+
+<script>
+const button = document.querySelector(".btn");
+let szoveg=document.getElementById("szoveg").value;
+console.log(szoveg);
+button.addEventListener("click",()=>{
+console.log(szoveg);
+})
+</script>
+
+</body>
+</html>
