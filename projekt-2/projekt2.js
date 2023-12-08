@@ -45,6 +45,7 @@ function setSev()
 
 
 let lista={"SetBoss":setBoss(),"SetBoss":setBoss(),"Setsev":setSev(),"SetSev":setSev(),"SetFixer":setFixer(),"SetFixer":setFixer(),"SetScorch":setScorch(),"SetScorch":setScorch(),"SetRex":setRex(),"SetRex":setRex(),"SetGregor":setGregor(),"SetGregor":setGregor()}
+let random={};
 
 for (let index in lista) {
     lista[index];
