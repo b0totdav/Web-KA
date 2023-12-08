@@ -1,31 +1,25 @@
 let keret=document.getElementById("container");
 
-let boss=document.createElement("img");
-boss.src="..kepek/projekt2/Bosskicsi.png";
-boss.class="elso";
+const boss = new Image();
+boss.src = "../kepek/projekt2/Bosskicsi.png";
+keret.appendChild(boss);
 
-let fixer=document.createElement("img");
-fixer.src="..kepek/projekt2/Fixericsi.png";
-fixer.class="masodik";
+const fixer = new Image();
+fixer.src = "../kepek/projekt2/Fixerkicsi.png";
+keret.appendChild(fixer);
 
-let gregor=document.createElement("img");
-gregor.src="..kepek/projekt2/Gregorkicsi.png";
-gregor.class="harmadik";
+const gregor = new Image();
+gregor.src = "../kepek/projekt2/Gregorkicsi.png";
+keret.appendChild(gregor);
 
-let rex=document.createElement("img");
-rex.src="..kepek/projekt2=rexkicsi.png";
-rex.class="negyedik";
+const rex = new Image();
+rex.src = "../kepek/projekt2/rexkicsi.png";
+keret.appendChild(rex);
 
-let scorch=document.createElement("img");
-scorch.src="..kepek/projekt2/Scorchkicsi.png";
-scorch.class="otodik";
+const scorch = new Image();
+scorch.src = "../kepek/projekt2/Scorchkicsi.png";
+keret.appendChild(scorch);
 
-let sev=document.createElement("img");
-sev.src="..kepek/projekt2/Sevkicsi.png";
-sev.class="hatodik";
-
-let lista={boss,fixer,gregor,rex,scorch,sev};
-
-for (const i in lista) {
-    keret.appendChild(i);
-}
+const sev = new Image();
+sev.src = "../kepek/projekt2/Sevkicsi.png";
+keret.appendChild(sev);

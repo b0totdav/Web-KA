@@ -6,7 +6,7 @@ function valtas(){
     if(eclipse.innerText=="Sötét mód"){
         eclipse.innerText="Világos mód";
         let body=document.getElementsByTagName("body");
-        body[0].style.backgroundImage = "url('../kepek/2.png')";
+        body[0].style.backgroundImage = "url('../kepek/projekt1/2.png')";
         let div=document.getElementsByTagName("div")
           for (let i = 0; i < div.length; i++) {
               div[i].style.backgroundColor = "rgba(0,0,0,0.7)";
@@ -40,7 +40,7 @@ function valtas(){
     }else{
         eclipse.innerText="Sötét mód";
         let body=document.getElementsByTagName("body");
-        body[0].style.backgroundImage = "url('../kepek/trueno.jpg')";
+        body[0].style.backgroundImage = "url('../kepek/projekt1/trueno.jpg')";
         let div=document.getElementsByTagName("div")
         for (let i = 0; i < div.length; i++) {
             div[i].style.backgroundColor = "rgba(105,105,105,0.8)";
