@@ -1,6 +1,32 @@
+@keyframes hide{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+body{
+    background-image: url("https://cdn.mos.cms.futurecdn.net/BfemybeKVXCf9pgX9WCxsc.jpg");
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33% 33% 33%;
+}  
 div{
     display: flex;
-    background-color: blue;
     height: auto;
     width: auto;
 }
