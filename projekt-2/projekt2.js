@@ -1,75 +1,67 @@
-let keret=document.getElementById("container");
+document.addEventListener('DOMContentLoaded', () => {
+    const images = ['projekt2/Bosskicsi.png', 'projekt2/Fixerkicsi.png', 'projekt2/Gregorkicsi.png','projekt2/rexkicsi.png','projekt2/Scorchkicsi.png', 'projekt2/Sevkicsi.png','projekt2/Bosskicsi.png', 'projekt2/Fixerkicsi.png', 'projekt2/Gregorkicsi.png','projekt2/rexkicsi.png','projekt2/Scorchkicsi.png', 'projekt2/Sevkicsi.png'];
+    let flippedCards = [];
+    let matchedCards = [];
 
+    const gameContainer = document.getElementById('game-container');
 
-function setBoss()
-{
-    const boss = new Image();
-    boss.src = "../kepek/projekt2/Bosskicsi.png";
-    boss.setAttribute("class","elso")
-    keret.appendChild(boss);
-}
+    images.sort(() => Math.random() - 0.5);
 
-function setFixer()
-{
-    const fixer = new Image();
-    fixer.src = "../kepek/projekt2/Fixerkicsi.png";
-    fixer.setAttribute("class","masodik")
-    keret.appendChild(fixer);
-}
+    images.forEach((image, index) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.dataset.image = image;
+        card.dataset.index = index;
+        card.addEventListener('click', handleCardClick);
 
-function setGregor()
-{
-    const gregor = new Image();
-    gregor.src = "../kepek/projekt2/Gregorkicsi.png";
-    gregor.setAttribute("class","harmadik")
-    keret.appendChild(gregor);
-}
+        const imgElement = document.createElement('img');
+        imgElement.src = 'projekt2/background.png'; 
+        card.appendChild(imgElement);
 
-function setRex()
-{
-    const rex = new Image();
-    rex.src = "../kepek/projekt2/rexkicsi.png";
-    rex.setAttribute("class","negyedik")
-    keret.appendChild(rex);
-}
+        gameContainer.appendChild(card);
+    });
 
-function setScorch()
-{
-    const scorch = new Image();
-    scorch.src = "../kepek/projekt2/Scorchkicsi.png";
-    scorch.setAttribute("class","otodik")
-    keret.appendChild(scorch);
-}
+    function handleCardClick() {
+        const clickedCard = this;
 
-function setSev()
-{
-    const sev = new Image();
-    sev.src = "../kepek/projekt2/Sevkicsi.png";
-    sev.setAttribute("class","hatodik")
-    keret.appendChild(sev);
-}
+        if (flippedCards.length < 2 && !flippedCards.includes(clickedCard) && !matchedCards.includes(clickedCard)) {
+            flipCard(clickedCard);
+            flippedCards.push(clickedCard);
 
+            if (flippedCards.length === 2) {
+                setTimeout(checkMatch, 1000);
+            }
+        }
+    }
 
-let lista={"SetBoss":setBoss(),"SetBoss":setBoss(),"Setsev":setSev(),"SetSev":setSev(),"SetFixer":setFixer(),"SetFixer":setFixer(),"SetScorch":setScorch(),"SetScorch":setScorch(),"SetRex":setRex(),"SetRex":setRex(),"SetGregor":setGregor(),"SetGregor":setGregor()}
-let randomlista=["","","","","","","","","","","",""];
-let lenght=lista.lenght;
+    function flipCard(card) {
+        const imgElement = card.querySelector('img');
+        imgElement.src =  card.dataset.image; 
+        card.style.backgroundColor = '#fff';
+    }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-  
-for(var i=0;i<lenght;i++)
-{
-    let random=getRandomInt(12);
-    randomlista[i]=lista[random];
-    lista.push(random);
-}
+    function unflipCards() {
+        flippedCards.forEach(card => {
+            const imgElement = card.querySelector('img');
+            imgElement.src = 'projekt2/background.png';
+            card.style.backgroundColor = '#ccc';
+        });
+        flippedCards = [];
+    }
 
-for (let index in randomlista) {
-    randomlista[index];
-}
+    function checkMatch() {
+        const [firstCard, secondCard] = flippedCards;
 
-function sideSwitch(background)
-{
-    background.style.visibility="visible";
-}
+        if (firstCard.dataset.image === secondCard.dataset.image) {
+            matchedCards.push(firstCard, secondCard);
+            flippedCards = [];
+
+            if (matchedCards.length === images.length) {
+                alert('Congratulations! You won!');
+            }
+        } else {
+            unflipCards();
+        }
+    }
+});
+
