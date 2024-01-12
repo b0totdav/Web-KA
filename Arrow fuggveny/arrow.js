@@ -1,5 +1,4 @@
-function Reverse()
-{
+const Megforditas=()=>{
     let e=document.getElementById("ki");
     e.innerHTML="";
     let szoveg =document.getElementById("szoveg").value;
@@ -12,6 +11,5 @@ function Reverse()
     {
         e.innerHTML+=vissz[betu];
     }
-}
 
-const Megforditas=()=>Reverse();
+};
