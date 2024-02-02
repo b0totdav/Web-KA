@@ -2,13 +2,8 @@ function insertDash(num) {
     let tomb=num.toString().split("");
     for(let i=0;i<num.length-1;i++)
     {
-      
-         if((1*tomb[i])%2!=0 && (1 * tomb[i+1])%2!=0){
-           tomb[i]= tomb[i]+"-";
-           
-         
-      
-     
+      if((1*tomb[i])%2!=0 && (1 * tomb[i+1])%2!=0){
+        tomb[i]= tomb[i]+"-";
     }
     console.log(tomb);
     let text=tomb.join("")
