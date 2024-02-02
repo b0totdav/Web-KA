@@ -1,4 +1,5 @@
 function meanVsMedian(numbers) {
+    numbers.sort(function(a,b){return a-b});
     let median = numbers[Math.floor(numbers.length/2)]
       let sum=0;
       for(let i=0; i<numbers.length; i++)
