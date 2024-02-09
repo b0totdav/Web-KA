@@ -1,7 +1,15 @@
 // All or Nothing
 function possiblyPerfect(key,answers) {
-    // kód helye
-}
+    let perfect = [];
+      
+    for(let i=0; i<answers.length;i++)
+    {
+        if(key[i] != "_"){
+           perfect.push(answers[i] == key[i]);
+        }
+    }
+      return perfect.every((element)=>element == true)||perfect.every((element)=>element == false);
+  }
 
 console.log(possiblyPerfect([..."A_C_B"],[..."ADCEB"]) + " >> true ");
 console.log( possiblyPerfect([..."B_B"],[..."BDC"]) + " >> false ");
@@ -24,7 +32,6 @@ console.log( possiblyPerfect([..."____"],[..."FFFF"]) + " >> true ");
 // Mean vs. Median
 function meanVsMedian(numbers) {
     numbers.sort(function(a,b){return(a-b)});
-    console.log(numbers)
     let median=numbers[Math.floor(numbers.length/2)]
     let sum=0;
     for(let i=0;i<numbers.length;i++)
@@ -32,9 +39,6 @@ function meanVsMedian(numbers) {
         sum+=numbers[i];
     }
     let mean=Math.floor(sum/numbers.length);
-    console.log(mean);
-    console.log(median);
-    console.log(sum);
     if(mean>median)
     {
         return "mean"
