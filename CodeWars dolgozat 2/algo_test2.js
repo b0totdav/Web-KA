@@ -30,7 +30,17 @@ console.log(removeFirstAndLast('A,1,23,456,78,9,Z'), '1 23 456 78 9');
 
 // 2. feladat
 // Is every value in the array an array?
-const arrCheck = value => 2// kódod
+const arrCheck = value => {
+    for(let i=0; i<=value.length;i++)
+    {
+        if(typeof(value[i])!=Array){
+            return false
+        }else{
+            return true
+        }
+    }
+
+}
 
 console.log('\n2. feladat\n')
 console.log(arrCheck([]), true);
