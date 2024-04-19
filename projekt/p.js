@@ -1,8 +1,10 @@
 const url = "https://vvri.pythonanywhere.com/api/courses";
 const ki=document.getElementById("container");
+const courseName=document.getElementById("courseName");
 
 function fetchCourses()
 {
+    ki.innerHTML="";
     fetch(url)
     .then(response => response.json())
     .then(data => {
@@ -17,13 +19,13 @@ function fetchCourses()
 }
 
 
-function createCourse(name) {
+function createCourse() {
     fetch('https://vvri.pythonanywhere.com/api/courses', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name: name })
+        body: JSON.stringify({ name: courseName.value })
     })
     .then(response => response.json())
     .then(data => {
