@@ -11,7 +11,11 @@ function fetchCourses()
         if (data)
             data.forEach(element => {
                 console.log(element)
-                ki.innerHTML+='<div class="course">'+element.name+'</div>';
+                ki.innerHTML+='<div class="course">'+element.name+'\n';
+                element.students.forEach(student => {
+                    ki.innerHTML+='<div class="students" onclick="deleteStudent(student.id)">&nbsp &nbsp'+student.name+'</div>'
+                });
+                ki.innerHTML+='</div>'
         })
     })
     .catch(error => console.log("Hiba történt: " + error))
@@ -35,9 +39,9 @@ function createCourse() {
     .catch(error => console.error('Error creating course:', error));
 }
 
-function deleteStudent(){
+function deleteStudent(studentId){
 
-    fetch(url, {
+    fetch("https://vvri.pythonanywhere.com/api/students/${studentId}", {
 
         method: "DELETE",
         headers: {
@@ -56,3 +60,4 @@ function deleteStudent(){
     })
     .catch(error => console.error('There was a problem with the fetch operation:', error));
 }
+
