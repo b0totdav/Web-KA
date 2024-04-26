@@ -11,7 +11,7 @@ function fetchCourses()
         if (data)
             data.forEach(element => {
                 console.log(element)
-                ki.innerHTML+='<div class="course">'+element.name+"</div>"
+                ki.innerHTML+='<div class="course">'+element.name+'</div>';
         })
     })
     .catch(error => console.log("Hiba történt: " + error))
@@ -35,3 +35,24 @@ function createCourse() {
     .catch(error => console.error('Error creating course:', error));
 }
 
+function deleteStudent(){
+
+    fetch(url, {
+
+        method: "DELETE",
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+})
+    .then(response => {
+    if (response.ok) {
+    return response.json();
+}
+    throw new Error('Network response was not ok.');
+})
+
+    .then(json => {console.log(json);
+        fetchCourses();
+    })
+    .catch(error => console.error('There was a problem with the fetch operation:', error));
+}
