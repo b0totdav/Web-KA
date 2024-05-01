@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="p.css">
 </head>
 <body onload="fetchCourses(),showStudents()">
+    <div id="alpha">
     <h1>Kurzusok:</h1>
     <div>
         <table id="container">
@@ -38,15 +39,24 @@
        </div>
     </div>
     <div>
-        <label for="courseName">Kúrzus neve:</label>
-        <input type="text" id="courseName">
-        <button onclick="createCourse()">Létrehozás</button>
+        <h2>Diák hozzáadása kurzushoz</h2>
+        <label for="newStudent">diák neve:</label>
+        <input type="text" name="newStudent" id="studentName">
+        <br>
+        <label for="courseId">kurzus száma:</label>
+        <input type="number" name="courseID" id="courseId2">
+        <br>
+        <button onclick="addStudentToCourse()">Diák hozzáadása</button>
+
     </div>
     <div>
-        <label for="courseName">Kúrzus neve:</label>
-        <input type="text" id="courseName">
-        <button onclick="createCourse()">Létrehozás</button>
+        <h2>Diák adatainak megjelenítése:</h2>
+        <label for="studentToSearch">Diák ID:</label>
+        <input type="number" name="studentToSearch" id="studentId">
+        <button onclick="studentToSearch()">Keresés</button>
+        <div id="studentData"></div>
     </div>
+</div>
     <script src="p.js"></script>
 </body>
 </html>

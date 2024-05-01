@@ -46,8 +46,11 @@ function searchCourse() {
         .then(data => {
             if (data) {
                 console.log(data);
-                eredmeny.innerHTML+='Neve: '+data.name;
-            } else {
+                eredmeny.innerHTML+='Neve: '+data.name
+                data.students.forEach(student => {
+                    eredmeny.innerHTML+='\t\t\t<div class="students">'+student.name+'</div>'
+                });
+                } else {
                 console.log("Course not found");
             }
     })
@@ -68,4 +71,46 @@ function showStudents(){
     .catch(error => console.log("Hiba történt: " + error))
 
 }
-
+function addStudentToCourse() {
+    studentname = document.getElementById("studentName").value;
+    let courseId2 = document.getElementById("courseId2").value;
+    fetch(surl, {
+         
+        // Metódus hozzáadása
+        method: "POST",
+         
+        // Küldendő test vagy tartalom hozzáadása
+        body: JSON.stringify({
+            name: studentname,
+            course_id: courseId2
+            
+        }),
+         
+        // Fejlécek hozzáadása a kéréshez
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log("New student in course created:", data); // Assuming data is the new course object
+        fetchCourses()
+        showStudents()
+    })
+    .catch(error => console.error("Error creating new course:", error));
+}
+function studentToSearch() {
+    let id= document.getElementById("studentId").value;
+    let skdi=document.getElementById("studentData");
+    fetch(surl +'/'+ id)
+        .then(response => response.json())
+        .then(data => {
+            if (data) {
+                console.log(data);
+                skdi.innerHTML="Száma:"+data.id+"<br>Neve: "+data.name;
+            } else {
+                console.log("Course not found");
+            }
+    })
+.catch(error => console.log("Hiba történt: " + error))
+}

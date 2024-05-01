@@ -1,6 +1,18 @@
+#alpha{
+    display: grid;
+}
+td{
+    text-align: center;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
 .course:hover{
     background-color: gray;
 }
 .students:hover{
     background-color: lightsteelblue;
+}
+
+body{
+    background-color: greenyellow;
 }
