@@ -1,8 +1,9 @@
 #alpha{
-    display: grid;
+
 }
 td{
     text-align: center;
+    font-style: italic;
     border: 2px solid black;
     border-collapse: collapse;
 }
