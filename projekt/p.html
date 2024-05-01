@@ -6,11 +6,42 @@
     <title>Document</title>
     <link rel="stylesheet" href="p.css">
 </head>
-<body onload="fetchCourses()">
-    <div id="container">
-
+<body onload="fetchCourses(),showStudents()">
+    <h1>Kurzusok:</h1>
+    <div>
+        <table id="container">
+            
+        </table>
     </div>
 
+    <div>
+        <h2>Kurzus keresése</h2>
+        <label for="courseId">Kúrzus száma:</label>
+        <input type="text" id="courseId">
+        <button onclick="searchCourse()">Keresés</button>
+        <div id="eredmeny">
+
+        </div>
+    </div>
+    <div>
+        <h2>Kurzus létrehozás</h2>
+        <label for="courseName">Kúrzus neve:</label>
+        <input type="text" id="courseName">
+        <button onclick="createCourse()">Létrehozás</button>
+    </div>
+    <div>
+       <h2>Diák lista:</h2>
+       <div>
+        <table id="students">
+
+        </table>
+       </div>
+    </div>
+    <div>
+        <label for="courseName">Kúrzus neve:</label>
+        <input type="text" id="courseName">
+        <button onclick="createCourse()">Létrehozás</button>
+    </div>
     <div>
         <label for="courseName">Kúrzus neve:</label>
         <input type="text" id="courseName">
