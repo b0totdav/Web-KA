@@ -1,5 +1,7 @@
 #alpha{
-
+   margin-left: 35%; 
+   font-size: larger;
+   min-width: 500px;
 }
 td{
     text-align: center;
@@ -8,12 +10,12 @@ td{
     border-collapse: collapse;
 }
 .course:hover{
-    background-color: gray;
+    background-color: gold;
 }
 .students:hover{
-    background-color: lightsteelblue;
+    background-color: cyan;
 }
 
 body{
-    background-color: greenyellow;
+    background-color: rgb(39, 156, 3);
 }
