@@ -14,7 +14,6 @@ function fetchCourses()
     .then(data => {
         if (data)
             data.forEach(element => {
-                console.log(element)
                 ki.innerHTML+='<tr class="course"><td>'+element.id+'</td><td>'+element.name+'</td></tr>';
         })
     })
@@ -46,9 +45,9 @@ function searchCourse() {
         .then(data => {
             if (data) {
                 console.log(data);
-                eredmeny.innerHTML+='Neve: '+data.name
+                eredmeny.innerHTML+='<div class="course">Neve: '+data.name+'</div>'
                 data.students.forEach(student => {
-                    eredmeny.innerHTML+='\t\t\t<div class="students">'+student.name+'</div>'
+                    eredmeny.innerHTML+='<div class="students">'+student.name+'</div>'
                 });
                 } else {
                 console.log("Course not found");
@@ -64,7 +63,6 @@ function showStudents(){
     .then(data => {
         if (data)
             data.forEach(element => {
-                console.log(element)
                 dki.innerHTML+='<tr class="students"><td>'+element.id+'</td><td>'+element.name+'</td></tr>';
         })
     })
@@ -107,7 +105,7 @@ function studentToSearch() {
         .then(data => {
             if (data) {
                 console.log(data);
-                skdi.innerHTML="Száma:"+data.id+"<br>Neve: "+data.name;
+                skdi.innerHTML='<div class="students">Száma:'+data.id+"<br>Neve: "+data.name+"</div>";
             } else {
                 console.log("Course not found");
             }

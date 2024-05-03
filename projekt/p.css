@@ -1,7 +1,10 @@
 #alpha{
    margin-left: 35%; 
-   font-size: larger;
+   font-size: large;
    min-width: 500px;
+}
+table{
+    min-width: 500px;
 }
 td{
     text-align: center;
@@ -11,9 +14,14 @@ td{
 }
 .course:hover{
     background-color: gold;
+    font-size: larger;
+    font-weight: bolder;
+
 }
 .students:hover{
     background-color: cyan;
+    font-size: larger;
+    font-weight: bolder;
 }
 
 body{
