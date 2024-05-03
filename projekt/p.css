@@ -5,6 +5,7 @@
 }
 table{
     min-width: 500px;
+    border-collapse: collapse;
 }
 td{
     text-align: center;
