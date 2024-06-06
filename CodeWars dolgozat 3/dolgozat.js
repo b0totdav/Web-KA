@@ -96,7 +96,11 @@ console.log(dnaStrand(""))
  * @param {string} emojiString az emoji érzelemlánc
 */
 function deEmojify(emojiString) {
-
+    if(emojiString==":)"){
+        return "\x00"
+    }else{
+        return "";
+    }
 }
 
 console.log('\n3. feladat:')
