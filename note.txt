@@ -1,0 +1,15 @@
+npm init
+
+gyakorlás
+
+gyakorlat
+
+b0totdav
+
+ "type": "module",
+
+ npm i nodemon --save-dev
+
+"start": "node index.js",
+"dev": "nodemon index.js"
+
