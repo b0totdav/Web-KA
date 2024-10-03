@@ -9,4 +9,4 @@ router.get('/add-product', (req,res) =>{
 
 })
 
-exp
+export {router as adminRoutes, products}
