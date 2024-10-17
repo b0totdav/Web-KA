@@ -1,12 +1,12 @@
 import express from 'express'
+import * as controllers from '../controllers/product.js'
 
 const router = express.Router()
 
 const products =[]
 
-router.get('/add-product', (req,res) =>{
-    res.send('Admin oldal GET metódus /add-product endpoint')
+router.get('/add-product', controllers.getAddProduct)
 
-})
+router.post(('/add-product'), controllers.postAddProduct)
 
-export {router as adminRoutes, products}
+export default router
