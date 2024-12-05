@@ -5,7 +5,7 @@ const db = new sqlite3.Database("./database.sqlite");
 const initializeDB = async () => {
     await dbRun("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, lastName TEXT ,email TEXT, class TEXT)");
 
-    const users = [
+    /*const users = [
         { firstName: "John", lastName: "Doe", email: "john.doe@example.com",class:"2E" },
         { firstName: "Mercedes", lastName: "Benz", email: "sls_amg@example.com",class:"S" },
         { firstName: "John", lastName: "Wick", email: "continental@example.com",class:"E" },
@@ -13,7 +13,7 @@ const initializeDB = async () => {
 
     for (const user of users) {
         await dbRun("INSERT INTO users (firstName, lastName, email, class) VALUES (?, ?,?,?)", [user.firstName, user.lastName, user.email, user.class]);
-    }
+    }*/
 };
 
 function dbQuery(sql, params = []) {

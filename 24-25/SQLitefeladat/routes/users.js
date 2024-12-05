@@ -25,7 +25,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
     try {
-        const result = await dbRun("INSERT INTO users (firstName, lastName ,email, class) VALUES (?, ?);", [req.body.firstName,req.body.lastName ,req.body.email, req.body.class]);
+        const result = await dbRun("INSERT INTO users (firstName, lastName ,email, class) VALUES (?,?,?, ?);", [req.body.firstName,req.body.lastName ,req.body.email, req.body.class]);
         res.status(201).json({ id: result.lastID, ...req.body });
     } catch (err) {
         next(err);
@@ -36,8 +36,7 @@ router.put("/:id", async (req, res, next) => {
     try {
         const user = await dbQuery("SELECT * FROM users WHERE id = ?;", [req.params.id]);
         if (!user) return res.status(404).json({ message: "User not found" });
-
-        await dbRun("UPDATE users SET name = ?, email = ? WHERE id = ?;", [req.body.firstName,req.body.lastName ,req.body.email, req.body.class]);
+        await dbRun("UPDATE users SET firstName = ?, lastName = ? ,email = ?, class = ? WHERE id = ?;", [req.body.firstName,req.body.lastName ,req.body.email, req.body.class, req.params.id]);
         res.status(200).json({ id: req.params.id, ...req.body });
     } catch (err) {
         next(err);
