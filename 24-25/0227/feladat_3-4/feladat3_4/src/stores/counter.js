@@ -1,12 +1,19 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const useCounterStore = defineStore('counter', () => {
-  const count = ref(0)
-  const doubleCount = computed(() => count.value * 2)
-  function increment() {
-    count.value++
+export const useFoursStore = defineStore('four', () => {
+  const four = ref({})
+  const getDatas = () =>{
+    fetch("http://localhost:3000/fours")
+     .then(response => response.json())
+     .then(data => four.value = data)
   }
 
-  return { count, doubleCount, increment }
+  const addFour = (number) => {
+  }
+  const removeFour = (number) => {
+
+  }
+
+  return { four, getDatas, addFour, removeFour }
 })
