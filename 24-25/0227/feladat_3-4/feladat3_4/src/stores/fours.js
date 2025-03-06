@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue'
+import { ref} from 'vue'
 import { defineStore } from 'pinia'
 
 export const useFoursStore = defineStore('four', () => {
@@ -11,9 +11,6 @@ export const useFoursStore = defineStore('four', () => {
 
   const addFour = (number) => {
   }
-  const removeFour = (number) => {
 
-  }
-
-  return { four, getDatas, addFour, removeFour }
+  return { four, getDatas, addFour}
 })
