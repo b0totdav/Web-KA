@@ -1,7 +1,8 @@
 <template>
 <div>
     <div v-for="four in foursStore.four">
-
+        <h1>{{ four.id }}</h1>
+        <p>{{ four.value }}</p>
     </div>
 </div>
 </template>
