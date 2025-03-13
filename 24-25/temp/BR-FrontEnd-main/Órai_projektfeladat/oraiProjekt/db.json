@@ -1,0 +1,34 @@
+{
+  "reservedDates": [
+    {
+      "dateId": "h8",
+      "title": "Foglalt",
+      "id": "44db"
+    },
+    {
+      "dateId": "k9",
+      "title": "Foglalt",
+      "id": "8391"
+    },
+    {
+      "dateId": "s13",
+      "title": "Foglalt",
+      "id": "84a8"
+    },
+    {
+      "dateId": "cs15",
+      "title": "Foglalt",
+      "id": "3b69"
+    },
+    {
+      "dateId": "p14",
+      "title": "Foglalt",
+      "id": "70e8"
+    },
+    {
+      "id": "a8fc",
+      "dateId": "p11",
+      "title": "Rendes title - 063012345678"
+    }
+  ]
+}
