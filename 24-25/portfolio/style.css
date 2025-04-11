@@ -155,7 +155,7 @@ span{
     position: relative;
 }
 .typing-text span::before{
-    content: "software Developer";
+    content: "software Developer ";
     color: #9cfd00;
     animation: words 20s infinite;
 }
@@ -163,6 +163,7 @@ span{
     content: " vagyok";
     background-color: black;
     position: absolute;
+    margin-left: 10px;
     width: calc(100% + 8px);
     height: 100%;
     border-left: 3px solid black;
